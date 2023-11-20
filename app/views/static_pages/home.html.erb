@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= yield(:title) %> | Test Pioneer</title>
-  </head>
-  <body>
-    <h1>Test Pioneer</h1>
-    <p>
-      This is the home page for QA informational website.
-    </p>
-  </body>
-</html>
+<div class="center jumbotron">
+  <h1>Test Pioneer</h1>
+
+  <h2>
+    This is the home page for QA informational website.
+  </h2>
+
+  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+</div>
