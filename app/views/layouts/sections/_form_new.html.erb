@@ -1,0 +1,14 @@
+<h1>Add a new section</h1>
+
+<%= form_with(model: @section, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "section-name-input-area" %>
+  </div>
+
+  <div class="form-actions">
+    <%= form.submit "Сохранить" %>
+  </div>
+<% end %>
+
+<%= link_to 'Назад', sections_path %>

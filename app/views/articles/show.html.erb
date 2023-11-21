@@ -1,0 +1,20 @@
+<% provide(:title, "")%>
+
+<p>
+  <strong>Раздел:</strong> <%= @article.section.name %>
+</p>
+<%= link_to 'Назад к списку', section_articles_path %> |
+<%= link_to 'Редактировать', edit_section_article_path(@article.section, @article) %> |
+<%= link_to 'Удалить', section_article_path(@section, @article), method: :delete, data: { confirm: 'Вы уверены?' } %>
+
+
+
+
+
+<h1><%= @article.title %></h1>
+
+<div class='article-content'>
+  <p>
+    <%= @article.content %>
+  </p>
+</div>

@@ -30,6 +30,7 @@ textarea {
   }
 }
 
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -113,4 +114,31 @@ footer {
   margin: 30px;
 }
 
+
 /* DUMP */
+
+
+/* Article */
+.article-content {
+  white-space: pre-line;
+}
+
+/* Field / Inputs */
+.title-input-area {
+  width: 100%;
+}
+
+.content-input-area {
+  width: 100%;
+  height: 50vh;
+}
+
+.section-name-input-area {
+  width: 100%;
+  height: 5vh;
+}
+
+/* Form Actions */
+.form-actions {
+  margin: 20px 0;
+}

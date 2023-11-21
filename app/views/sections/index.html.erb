@@ -1,0 +1,17 @@
+<% provide(:title, 'QA wikipedia') %>
+<h1>QA wikipedia</h1>
+<%= link_to "Добавить раздел", new_section_path %>
+<p>Contents</p>
+
+<div>
+
+    <ul>
+      <% @sections.each do |section| %>
+        <li><%= link_to section.name, section_articles_path(section) %></li>
+          <ul>
+            <% section.articles.each do |article| %>
+              <li><%= link_to article.title, [section, article] %></li>
+            <% end %>
+          </ul>
+      <% end %>
+    </ul>
