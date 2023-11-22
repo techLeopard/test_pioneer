@@ -3,7 +3,9 @@
 <%= link_to 'Назад к разделам', interview_wikipedia_path %> |
 <%= link_to 'Редактировать название раздела', edit_section_path(@section)%> |
 <%= link_to 'Новая Статья', new_section_article_path %>
-
+<div class='delete-section-button'>
+  <%= link_to 'Удалить раздел', section_path(@section), method: :delete, data: { confirm: 'Вы уверены?' } %>
+</div>
 <h1><%= @section.name %></h1>
 
 <ul class='section-list'>

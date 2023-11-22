@@ -46,7 +46,7 @@ class SectionsController < ApplicationController
   def destroy
     @section = Section.find(params[:id])
     @section.destroy
-    redirect_to sections_url
+    redirect_to sections_path
   end
 
   private
