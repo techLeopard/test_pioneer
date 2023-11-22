@@ -13,6 +13,7 @@ $white: #fff;
 
 body {
   padding-top: 60px;
+  font-size: 16px;
 }
 
 section {
@@ -36,27 +37,42 @@ textarea {
 h1, h2, h3, h4, h5, h6 {
     line-height: 1;
   }
-  
+
   h1 {
-    font-size: 3em;
-    letter-spacing: -2px;
-    margin-bottom: 30px;
-    text-align: center;
+      font-size: 2em; /* 32px, если базовый размер шрифта 16px */
+      margin-bottom: 2em;
+      text-align: center;
   }
-  
+
   h2 {
-    font-size: 1.2em;
-    letter-spacing: -1px;
-    margin-bottom: 30px;
-    text-align: center;
-    font-weight: normal;
-    color: $gray-light;
+      font-size: 1.75em; /* 28px, если базовый размер шрифта 16px */
+      margin-bottom: 2em;
+      
   }
-  
+
+  h3 {
+      font-size: 1.5em; /* 24px, если базовый размер шрифта 16px */
+  }
+
+  h4 {
+      font-size: 1.25em; /* 20px, если базовый размер шрифта 16px */
+  }
+
+  h5 {
+      font-size: 1em; /* 16px, соответствует базовому размеру шрифта */
+  }
+
+  h6 {
+      font-size: 0.875em; /* 14px, если базовый размер шрифта 16px */
+  }
+
   p {
-    font-size: 1.1em;
     line-height: 1.7em;
   }
+
+.small-text {
+    font-size: 0.8em; /* Мелкий текст */
+}
 
 
   /* header */
@@ -141,4 +157,18 @@ footer {
 /* Form Actions */
 .form-actions {
   margin: 20px 0;
+}
+
+
+/* Contents list */
+.contents-list {
+  list-style-type: none;
+}
+
+.articles-list {
+  list-style-type: none;
+}
+
+.section-list {
+  list-style-type: none;
 }

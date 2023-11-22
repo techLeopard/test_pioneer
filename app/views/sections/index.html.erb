@@ -1,17 +1,21 @@
 <% provide(:title, 'QA wikipedia') %>
-<h1>QA wikipedia</h1>
+
+<%= link_to 'Back to Interview', interview_path %> |
 <%= link_to "Добавить раздел", new_section_path %>
-<p>Contents</p>
+
+<h1>QA wikipedia</h1>
+
+<h3>Contents</h3>
 
 <div>
-
-    <ul>
-      <% @sections.each do |section| %>
-        <li><%= link_to section.name, section_articles_path(section) %></li>
-          <ul>
-            <% section.articles.each do |article| %>
-              <li><%= link_to article.title, [section, article] %></li>
-            <% end %>
-          </ul>
-      <% end %>
-    </ul>
+  <ul class='contents-list'>
+    <% @sections.each do |section| %>
+      <li><%= link_to section.name, section_articles_path(section) %></li>
+        <ul class='articles-list'>
+          <% section.articles.each do |article| %>
+            <li><%= link_to article.title, [section, article] %></li>
+          <% end %>
+        </ul>
+    <% end %>
+  </ul>
+</div>
