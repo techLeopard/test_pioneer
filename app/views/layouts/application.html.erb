@@ -11,6 +11,11 @@
     <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
 
     <%= render 'layouts/shim' %>
+
+    <!-- tinymce wysiwyg-->
+    <%= tinymce_assets %>
+    <script type="text/javascript" src="/assets/tinymce.js"></script>
+
   </head>
   <body>
     <%= render 'layouts/header' %>
