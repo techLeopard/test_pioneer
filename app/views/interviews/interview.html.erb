@@ -4,11 +4,13 @@
       This page is developed to help a specialist prepare for interview questions.
     </p>
 
-    <ul>
+    <ul class='main-nav'>
       <li><%= link_to "QA wikipedia",   interview_wikipedia_path %></li>
-      <li><%= link_to "Структура собеседования",   interview_structure_path %></li>
-      <li><%= link_to "Вопросы собеседования",   interview_questions_path %></li>
       <li><%= link_to "Инструменты",   interview_tools_path %></li>
       <li><%= link_to "Тестовые задания / Case study",   interview_assignments_path %></li>
+    </ul>  
+    <ul class='secondary-nav'>
+      <li><%= link_to "Структура собеседования",   interview_structure_path %></li>
+      <li><%= link_to "Вопросы собеседования",   interview_questions_path %></li>
       <li><%= link_to "Dump",   interview_dump_path %></li>
     </ul>
