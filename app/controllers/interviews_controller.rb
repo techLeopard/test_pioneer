@@ -1,6 +1,6 @@
 class InterviewsController < ApplicationController
 
-    def interview
+    def index
     end
     
     def wikipedia
@@ -13,9 +13,6 @@ class InterviewsController < ApplicationController
     end
 
     def tools
-    end
-
-    def assignments
     end
 
 end

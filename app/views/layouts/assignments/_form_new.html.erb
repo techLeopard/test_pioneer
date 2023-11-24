@@ -1,0 +1,28 @@
+<%= form_with(model: @assignment, local: true) do |form| %>
+
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "title-input-area" %>
+  </div>
+
+  <div>
+    <%= form.label :company_name %>
+    <%= form.text_field :company_name, class: "title-input-area" %>
+  </div>
+
+  <div>
+    <%= form.label :link %>
+    <%= form.text_field :link, class: "title-input-area" %>
+  </div>
+
+  <div>
+    <%= form.text_area :content, class: "tinymce" %>
+    <%= tinymce %>
+  </div>
+
+  <div class="form-actions">
+    <%= form.submit "Создать задание" %>
+  </div>
+<% end %>
+
+<%= link_to 'Отмена', assignments_path %>

@@ -1,0 +1,28 @@
+<%= form_with(model: [@assignment], local: true) do |form| %>
+
+  <div>
+    <%= form.label :title %>
+    <%= form.text_area :title, class: "title-input-area" %>
+  </div>
+
+  <div>
+    <%= form.label :company_name %>
+    <%= form.text_area :company_name, class: "title-input-area" %>
+  </div>
+
+  <div>
+    <%= form.label :link %>
+    <%= form.text_area :link, class: "title-input-area" %>
+  </div>
+
+  <div>
+    <%= form.text_area :content, class: "tinymce" %>
+    <%= tinymce %>
+  </div>
+
+  <div class="form-actions">
+    <%= form.submit "Сохранить изменения" %>
+  </div>
+<% end %>
+
+<%= link_to 'Отмена', assignments_path %>

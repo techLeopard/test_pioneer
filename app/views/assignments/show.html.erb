@@ -1,0 +1,17 @@
+<% provide(:title, "Assignment") %>
+
+<%= link_to 'Назад к списку', assignments_path %> |
+<%= link_to 'Редактировать', edit_assignment_path(@assignment) %> |
+<%= link_to 'Удалить', @assignment, method: :delete, data: { confirm: 'Вы уверены?' } %>
+
+<h1><%= @assignment.title %></h1>
+<p>
+  <strong>Company:</strong> <%= @assignment.company_name %>
+</p>
+<p>
+  <strong>Link:</strong> <%= @assignment.link %>
+</p>
+
+<div class='article-content'>
+  <%= @assignment.content.html_safe %>
+</div>
