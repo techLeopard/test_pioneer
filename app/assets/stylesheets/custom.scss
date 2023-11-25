@@ -66,9 +66,6 @@ h1, h2, h3, h4, h5, h6 {
       font-size: 0.875em; /* 14px, если базовый размер шрифта 16px */
   }
 
-  p {
-    line-height: 1.7em;
-  }
 
 .small-text {
     font-size: 0.8em; /* Мелкий текст */
@@ -124,7 +121,6 @@ footer {
   }
 }
 
-
 /* Div elements*/
 .tools-list {
   margin: 30px;
@@ -172,6 +168,12 @@ footer {
 .section-list {
   list-style-type: none;
 }
+
+/* Assignments list*/
+.assignments-list {
+  list-style-type: none;
+}
+
 
 /* Delete Section Button */
 .delete-section-button {
