@@ -1,0 +1,6 @@
+<% provide(:title, @tool.title)%>
+
+<%= link_to 'Назад к инструментам', tools_path %> |
+<%= link_to 'Удалить инструмент', tool_path(@tool), method: :delete, data: { confirm: 'Вы уверены?' } %>
+
+<h1><%= @tool.title %></h1>

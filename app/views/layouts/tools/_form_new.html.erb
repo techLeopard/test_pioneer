@@ -1,0 +1,15 @@
+<h1>Add a new tool</h1>
+
+<%= form_with(model: @tool, local: true) do |form| %>
+  
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "section-name-input-area" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Сохранить" %>
+  </div>
+<% end %>
+
+<%= link_to 'Назад', tools_path %>
