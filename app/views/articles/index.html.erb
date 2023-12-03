@@ -1,4 +1,4 @@
-<% provide(:title, "Articles")%>
+<% provide(:title, @section.name)%>
 
 <%= link_to 'Назад к разделам', interview_wikipedia_path %> |
 <%= link_to 'Редактировать название раздела', edit_section_path(@section)%> |

@@ -4,7 +4,23 @@
   
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title, class: "section-name-input-area" %>
+    <%= form.text_field :title, class: "single-line-input-area" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.text_field :category, class: "single-line-input-area" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :documentation_link %>
+    <%= form.text_field :documentation_link, class: "single-line-input-area" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: "tinymce" %>
+    <%= tinymce %>
   </div>
 
   <div class="actions">

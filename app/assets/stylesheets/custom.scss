@@ -8,12 +8,20 @@ $gray-medium-light: #eaeaea;
 $gray: #555;
 $gray-darker: #222;
 $white: #fff;
+$black-light: #363636;
+$black-dark: #1f1f1f;
+$blue-link: #0000FF;
 
 /* universal */
+
+.container {
+  width: 60vw;
+}
 
 body {
   padding-top: 60px;
   font-size: 16px;
+  background-color: $black-light;
 }
 
 section {
@@ -32,10 +40,12 @@ textarea {
 }
 
 
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
     line-height: 1;
+    color: $white;
   }
 
   h1 {
@@ -45,9 +55,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   h2 {
-      font-size: 1.75em; /* 28px, если базовый размер шрифта 16px */
-      margin-bottom: 2em;
-      
+      font-size: 1.75em; /* 28px, если базовый размер шрифта 16px */       
   }
 
   h3 {
@@ -69,7 +77,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .small-text {
     font-size: 0.8em; /* Мелкий текст */
+    color: $white;
+    a {
+      color: $white;
+    }
 }
+
 
 
   /* header */
@@ -117,6 +130,8 @@ footer {
     li {
       float: left;
       margin-left: 15px;
+    } a {
+      color: $white;
     }
   }
 }
@@ -127,15 +142,7 @@ footer {
 }
 
 
-/* DUMP */
-
-
-/* Article */
-.article-content {
-  white-space: pre-line;
-}
-
-/* Field / Inputs */
+/* Field Inputs */
 .title-input-area {
   width: 100%;
 }
@@ -145,7 +152,7 @@ footer {
   height: 50vh;
 }
 
-.section-name-input-area {
+.single-line-input-area {
   width: 100%;
   height: 5vh;
 }
@@ -157,20 +164,7 @@ footer {
 
 
 /* Contents list */
-.contents-list {
-  list-style-type: none;
-}
-
-.articles-list {
-  list-style-type: none;
-}
-
-.section-list {
-  list-style-type: none;
-}
-
-/* Assignments list*/
-.assignments-list {
+.contents-list, .articles-list, .section-list, .assignments-list, .secondary-nav, .main-nav {
   list-style-type: none;
 }
 
@@ -180,19 +174,40 @@ footer {
   float: right;
 }
 
-
-/* Main Nav */
-.main-nav {
-  list-style-type: none;
-  font-size: 1.5em;
+/* TOOLS */
+.tool-header {
+  margin: 3em;
 }
 
-/* Secondary Nav */
-.secondary-nav {
-  list-style-type: none;
+.tool-title {
+  color: $white;
 }
 
-/* Assignments */
-.top-nav-button {
-  margin-top: 5vh;
+.tool-header-logo-name {
+  color: $white;
 }
+
+.tool-header-category-link {
+  color: $white;
+  margin: 3em 0;
+  a:hover {
+    color: $blue-link;
+    text-decoration: none;
+  }
+}
+
+.tool-logo {
+  width: 100px
+}
+
+.content-div {
+  margin: 0 3em;
+  p {
+    color: $white;
+    white-space: pre-line;
+  }
+  h4 {
+    margin-bottom: 1.5em;
+  }
+}
+

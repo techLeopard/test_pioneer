@@ -1,6 +1,24 @@
 <% provide(:title, @tool.title)%>
 
-<%= link_to 'Назад к инструментам', tools_path %> |
-<%= link_to 'Удалить инструмент', tool_path(@tool), method: :delete, data: { confirm: 'Вы уверены?' } %>
+<div class='objects-navigation'>
+    <%= link_to 'Назад к инструментам', tools_path %> |
+    <%= link_to 'Редактировать инструмент', edit_tool_path(@tool) %> |
+    <%= link_to 'Удалить инструмент', tool_path(@tool), method: :delete, data: { confirm: 'Вы уверены?' } %>
+</div>
 
-<h1><%= @tool.title %></h1>
+<div class='tool-header'>
+    <div class='tool-header-logo-name'>
+        <%= image_tag(@tool.logo_path, class: "tool-logo") %>
+        <h2 class="tool-title"><%= @tool.title %></h2>
+    </div>
+
+    <div class='tool-header-category-link'>
+        <p>Категория: <%= @tool.category %></p>
+        <a href="<%= @tool.documentation_link %>" target='_blank'>Официальная документация</a>
+    </div>
+</div>
+
+<div class='content-div'>
+    <h4>Описание</h4>
+    <p><%= @tool.description.html_safe %></p>
+</div>

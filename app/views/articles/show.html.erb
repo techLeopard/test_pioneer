@@ -1,4 +1,4 @@
-<% provide(:title, "")%>
+<% provide(:title, @article.title)%>
 
 <p>
   <strong>Раздел:</strong> <%= @article.section.name %>
@@ -9,6 +9,6 @@
 
 <h1><%= @article.title %></h1>
 
-<div class='article-content'>
-    <%= @article.content.html_safe %>
+<div class='content-div'>
+  <p><%= @article.content.html_safe %></p>
 </div>
