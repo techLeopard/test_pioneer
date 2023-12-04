@@ -51,7 +51,7 @@ def index
 
   private
   def tool_params
-    params.require(:tool).permit(:title, :logo_path, :category, :documentation_link, :description )
+    params.require(:tool).permit(:title, :logo_path, :category, :platform, :documentation_link, :description, :history )
   end
 
 end

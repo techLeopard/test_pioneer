@@ -13,12 +13,22 @@
   </div>
 
   <div class="field">
+    <%= form.label :platform %>
+    <%= form.text_field :platform, class: "single-line-input-area" %>
+  </div>
+
+  <div class="field">
     <%= form.label :documentation_link %>
     <%= form.text_field :documentation_link, class: "single-line-input-area" %>
   </div>
 
   <div class="field">
     <%= form.text_area :description, class: "tinymce" %>
+    <%= tinymce %>
+  </div>
+
+  <div class="field">
+    <%= form.text_area :history, class: "tinymce" %>
     <%= tinymce %>
   </div>
 

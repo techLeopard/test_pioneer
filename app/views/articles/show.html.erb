@@ -1,14 +1,14 @@
 <% provide(:title, @article.title)%>
-
-<p>
-  <strong>Раздел:</strong> <%= @article.section.name %>
-</p>
-<%= link_to 'Назад к списку', section_articles_path %> |
-<%= link_to 'Редактировать', edit_section_article_path(@article.section, @article) %> |
-<%= link_to 'Удалить', section_article_path(@section, @article), method: :delete, data: { confirm: 'Вы уверены?' } %>
-
+<div class='article-controls'>
+  <p>
+    <strong>Раздел:</strong> <%= @article.section.name %>
+  </p>
+  <%= link_to 'Назад к списку', section_articles_path %> |
+  <%= link_to 'Редактировать', edit_section_article_path(@article.section, @article) %> |
+  <%= link_to 'Удалить', section_article_path(@section, @article), method: :delete, data: { confirm: 'Вы уверены?' } %>
+</div>
 <h1><%= @article.title %></h1>
 
-<div class='content-div'>
+<div class='article-text'>
   <p><%= @article.content.html_safe %></p>
 </div>

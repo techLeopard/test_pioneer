@@ -1,24 +1,53 @@
 <% provide(:title, @tool.title)%>
 
 <div class='objects-navigation'>
-    <%= link_to 'Назад к инструментам', tools_path %> |
-    <%= link_to 'Редактировать инструмент', edit_tool_path(@tool) %> |
-    <%= link_to 'Удалить инструмент', tool_path(@tool), method: :delete, data: { confirm: 'Вы уверены?' } %>
-</div>
-
-<div class='tool-header'>
-    <div class='tool-header-logo-name'>
-        <%= image_tag(@tool.logo_path, class: "tool-logo") %>
-        <h2 class="tool-title"><%= @tool.title %></h2>
-    </div>
-
-    <div class='tool-header-category-link'>
-        <p>Категория: <%= @tool.category %></p>
-        <a href="<%= @tool.documentation_link %>" target='_blank'>Официальная документация</a>
-    </div>
+    <%= link_to 'Назад', tools_path %> |
+    <%= link_to 'Редактировать', edit_tool_path(@tool) %> |
+    <%= link_to 'Удалить', tool_path(@tool), method: :delete, data: { confirm: 'Вы уверены?' } %>
 </div>
 
 <div class='content-div'>
-    <h4>Описание</h4>
-    <p><%= @tool.description.html_safe %></p>
+
+    <div class="left-side-navbar">
+        <div class='card'>
+            <div class='tool-card-logo-name'>
+                <%= image_tag(@tool.logo_path, class: "tool-logo") %>
+                <h2 class="tool-title"><%= @tool.title %></h2>
+            </div>
+
+            <div class='tool-card-category-link'>
+                <p><%= @tool.category %></p>
+                <p><%= @tool.platform %></p>
+                <a href="<%= @tool.documentation_link %>" target='_blank'>Официальная документация</a>
+            </div>
+        </div>
+
+        <div class='tool-contents'>
+            <ul class='ul-1'>
+                <li><%= link_to 'Полезные ссылки' %></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class='description'>
+        <div class='description-block'>    
+            <h4>Описание</h4>
+            <p><%= @tool.description.html_safe %></p>
+        </div>
+
+        <div class='description-block'>
+            <h4>История</h4>
+            <p><%= @tool.history.html_safe %></p>
+        </div>
+
+        <div class='description-block'>
+            <h4>Статьи</h4>
+            <ul>
+                <li><%= link_to '' %></li>
+            </ul>
+        </div>
+
+    </div>
+
 </div>
