@@ -1,0 +1,16 @@
+<%= form_with(model: [@tool, @post], local: true) do |form| %>
+
+  <div>
+    <%= form.label :title %>
+    <%= form.text_area :title, class: "single-line-input-area" %>
+  </div>
+
+  <div>
+    <%= form.text_area :content, class: "tinymce" %>
+    <%= tinymce %>
+  </div>
+
+  <div class="form-actions">
+    <%= form.submit "Создать Статью" %>
+  </div>
+<% end %>

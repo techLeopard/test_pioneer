@@ -1,15 +1,15 @@
 <% provide(:title, @tool.title)%>
 
 <div class='objects-navigation'>
-    <%= link_to 'Назад', tools_path %> |
-    <%= link_to 'Редактировать', edit_tool_path(@tool) %> |
-    <%= link_to 'Удалить', tool_path(@tool), method: :delete, data: { confirm: 'Вы уверены?' } %>
+    <%= link_to '[back]', tools_path %> |
+    <%= link_to '[edit]', edit_tool_path(@tool) %> |
+    <%= link_to '[delete]', tool_path(@tool), method: :delete, data: { confirm: 'Вы уверены?' } %>
 </div>
 
 <div class='content-div'>
 
     <div class="left-side-navbar">
-        <div class='card'>
+        <div class='tool-card'>
             <div class='tool-card-logo-name'>
                 <%= image_tag(@tool.logo_path, class: "tool-logo") %>
                 <h2 class="tool-title"><%= @tool.title %></h2>
@@ -22,18 +22,22 @@
             </div>
         </div>
 
-        <div class='tool-contents'>
-            <ul class='ul-1'>
-                <li><%= link_to 'Полезные ссылки' %></li>
-            </ul>
-        </div>
-
     </div>
 
     <div class='description'>
         <div class='description-block'>    
             <h4>Описание</h4>
             <p><%= @tool.description.html_safe %></p>
+        </div>
+
+        <div class='description-block'>    
+            <h4>Ключевая функциональность</h4>
+            <%= link_to '[add feature]', new_tool_feature_path(@tool) %>
+            <ul>
+                <% @tool.features.each do |feature| %>
+                <li><%= link_to feature.description, tool_feature_path(feature.tool, feature) %></li>
+                <% end %>
+            </ul>
         </div>
 
         <div class='description-block'>
@@ -43,11 +47,13 @@
 
         <div class='description-block'>
             <h4>Статьи</h4>
-            <ul>
-                <li><%= link_to '' %></li>
-            </ul>
+            <%= link_to '[add article]', new_tool_post_path(@tool) %>
+                <ul class='tool-posts-list'>
+                    <% @tool.posts.each do |post| %>
+                    <li><%= link_to post.title, tool_post_path(@tool, post) %></li>
+                    <% end %>
+                </ul>
         </div>
-
     </div>
 
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_04_023653) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_04_184549) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -40,6 +40,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_04_023653) do
     t.index ["type"], name: "index_ckeditor_assets_on_type"
   end
 
+  create_table "features", force: :cascade do |t|
+    t.text "description"
+    t.integer "tool_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tool_id"], name: "index_features_on_tool_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.integer "tool_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tool_id"], name: "index_posts_on_tool_id"
+  end
+
   create_table "sections", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -66,4 +83,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_04_023653) do
   end
 
   add_foreign_key "articles", "sections"
+  add_foreign_key "features", "tools"
+  add_foreign_key "posts", "tools"
 end

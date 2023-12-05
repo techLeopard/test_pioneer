@@ -8,6 +8,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :logo_path %>
+    <%= form.text_field :logo_path, class: "single-line-input-area" %>
+  </div>
+
+  <div class="field">
     <%= form.label :category %>
     <%= form.text_field :category, class: "single-line-input-area" %>
   </div>
@@ -29,6 +34,7 @@
   </div>
 
   <div class="field">
+    <%= form.label :history %>
     <%= form.text_area :history, class: "tinymce" %>
     <%= tinymce %>
   </div>

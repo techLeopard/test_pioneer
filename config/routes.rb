@@ -21,6 +21,9 @@ Rails.application.routes.draw do
 
   resources :assignments
 
-  resources :tools
+  resources :tools do
+    resources :posts
+    resources :features
+  end
 
 end
