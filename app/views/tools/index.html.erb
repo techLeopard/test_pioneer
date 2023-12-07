@@ -3,10 +3,14 @@
 <%= link_to '[back]', interview_path %> |
 <%= link_to '[add instrument]', new_tool_path %>
 
-<h1>Инструменты</h1>
+<h1>Tools</h1>
 
-<div>
-  <ul class='contents-list'>
+<p>
+  This page contains stack of tools needed for QA Engineer career.
+</p>
+
+<div class='index-div'>
+  <ul class='index-list'>
     <% @tools.each do |tool| %>
       <li><%= link_to tool.title, tool_path(tool) %></li>
     <% end %>

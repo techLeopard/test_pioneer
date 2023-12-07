@@ -1,12 +1,12 @@
 <% provide(:title, "Interview") %>
-    <h1>Interview</h1>
-    <p class='interview-page-description'>
-      This page is developed to help a specialist kickstart a QA Engineer career.
-    </p>
-
-    <ul class='main-nav'>
+  <h1>Interview</h1>
+  <p class='interview-page-description'>
+    This page is developed to help a specialist kickstart a QA Engineer career.
+  </p>
+  <div class='index-div'>
+    <ul class='index-list'>
       <li><%= link_to "QA wikipedia",   interview_wikipedia_path %></li>
-      <li><%= link_to "Инструменты",   interview_tools_path %></li>
+      <li><%= link_to "Tools",   interview_tools_path %></li>
       <li><%= link_to "Тестовые задания", assignments_path %></li>
     </ul>  
     <ul class='secondary-nav'>
@@ -14,3 +14,4 @@
       <li><%= link_to "Вопросы собеседования",   interview_questions_path %></li>
       <li><%= link_to "Dump",   interview_dump_path %></li>
     </ul>
+  </div>
