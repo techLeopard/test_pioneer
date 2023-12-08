@@ -6,9 +6,6 @@ class InterviewsController < ApplicationController
     def wikipedia
     end
 
-    def questions
-    end
-
     def structure
     end
 

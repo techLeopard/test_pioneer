@@ -1,0 +1,19 @@
+<%= form_with(model: @note, local: true) do |form| %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "single-line-input-area" %>
+  </div>
+
+  <div>
+    <%= form.text_area :content, class: "tinymce" %>
+    <%= tinymce %>
+  </div>
+
+  <div class="form-actions">
+    <%= form.submit "Сохранить изменения" %>
+  </div>
+
+<% end %>
+
+<%= link_to 'Отмена', note_path(@note) %>

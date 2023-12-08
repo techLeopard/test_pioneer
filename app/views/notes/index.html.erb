@@ -1,0 +1,15 @@
+<% provide(:title, 'Notes') %>
+
+<%= link_to '[back]', interview_path %>
+<%= link_to '[new note]', new_note_path(@note) %>
+
+
+<h1>Notes</h1>
+
+<ul class = 'stack-list'>
+    <% @notes.each do |note| %>
+        <li>
+            <%= link_to note.title, note_path(note) %>
+        </li>
+    <% end %>
+</ul>

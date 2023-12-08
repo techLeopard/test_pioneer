@@ -3,7 +3,7 @@
 <div>
     <ul>
       <% @sections.each do |section| %>
-        <li><%= link_to section.name, section_path(section) %></li>
+        <li><%= link_to section.title, section_path(section) %></li>
           <ul>
             <% section.articles.each do |article| %>
               <li><%= link_to article.title, [section, article] %></li>

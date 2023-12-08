@@ -1,0 +1,7 @@
+<% provide(:title, @note.title) %>
+
+<%= link_to '[back]', note_path(@note) %>
+
+<h1><%= @note.title %></h1>
+
+<%= render 'layouts/notes/form_edit' %>

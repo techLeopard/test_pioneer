@@ -1,7 +1,7 @@
 <% provide(:title, @article.title)%>
 <div class='article-controls'>
   <p>
-    <strong>Раздел:</strong> <%= @article.section.name %>
+    <strong>Раздел:</strong> <%= @article.section.title %>
   </p>
   <%= link_to '[back]', section_articles_path %> |
   <%= link_to '[edit]', edit_section_article_path(@article.section, @article) %> |

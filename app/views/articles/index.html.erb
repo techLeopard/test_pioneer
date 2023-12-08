@@ -1,4 +1,4 @@
-<% provide(:title, @section.name)%>
+<% provide(:title, @section.title)%>
 
 <%= link_to '[back]', interview_wikipedia_path %> |
 <%= link_to '[edit]', edit_section_path(@section)%> |
@@ -6,7 +6,7 @@
 <div class='delete-section-button'>
   <%= link_to '[delete section]', section_path(@section), method: :delete, data: { confirm: 'Вы уверены?' } %>
 </div>
-<h1><%= @section.name %></h1>
+<h1><%= @section.title %></h1>
 
 <ul class='section-list'>
   <% @articles.each do |article| %>

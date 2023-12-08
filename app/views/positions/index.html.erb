@@ -1,0 +1,15 @@
+<% provide(:title, "Positions") %>
+
+<%= link_to '[back]', interview_path %> |
+
+<h1>Positions</h1>
+
+<div class='stack-div'>
+    <ul class='stack-list'>    
+        <% @positions.each do |position| %>
+            <li>
+                <%= link_to position.title, position_path(position) %>
+            </li>
+        <% end %>
+    </ul>
+</div>
