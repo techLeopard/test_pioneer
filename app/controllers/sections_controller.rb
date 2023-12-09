@@ -1,4 +1,5 @@
 class SectionsController < ApplicationController
+  before_action :set_position
 
 # GET /sections
   def index
@@ -50,7 +51,12 @@ class SectionsController < ApplicationController
   end
 
   private
+
+  def set_position
+    @position = Position.find(params[:position_id])
+  end
+
   def section_params
-    params.require(:section).permit(:title, :description)
+    params.require(:section).permit(:title, :position_id)
   end
 end

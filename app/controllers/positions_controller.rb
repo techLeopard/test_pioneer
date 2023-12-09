@@ -5,6 +5,7 @@ class PositionsController < ApplicationController
 
     def show
         @position = Position.find(params[:id])
+        @sections = @position.sections.includes(:articles) 
     end
 
 end

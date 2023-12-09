@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   scope '/interview' do
     get '/', to: 'interviews#index', as: 'interview'
     get '/notes', to: 'notes#index', as: 'interview_notes'
-    get '/wikipedia', to: 'sections#index', as: 'interview_wikipedia'
     get '/structure', to: 'interviews#structure', as: 'interview_structure'
     get '/dump', to: 'interviews#dump', as: 'interview_dump'
     get '/assignments', to: 'assignments#index', as: 'interview_assignments'
@@ -16,8 +15,10 @@ Rails.application.routes.draw do
     get '/stack', to: 'positions#index', as: 'interview_stack'
   end
 
-  resources :sections do
-    resources :articles
+  resources :positions do
+    resources :sections do
+      resources :articles
+    end
   end
 
   resources :assignments
@@ -26,8 +27,7 @@ Rails.application.routes.draw do
     resources :posts
     resources :features
   end
-
-  resources :positions
+  
 
   resources :notes
 end

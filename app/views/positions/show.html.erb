@@ -1,18 +1,28 @@
-<% provide(:title, @position.title)%>
+<% provide(:title, @position.title) %>
 
 <%= link_to '[back]', interview_stack_path %> |
 
 <h1><%= @position.title %></h1>
 
-<div class='content-div'>
-    <div class='description-block'>
-        <h4>Теория:</h4>
-        
-    </div>
+<div class='stack-show-content-div'>
+  <div class='stack-block'>
+    <h4>Теория:</h4>
+    <ul>
+      <% @sections.each do |section| %>
+        <li>
+          <%= link_to section.title, position_section_path(@position, section) %>
+          <ul>
+            <% section.articles.each do |article| %>
+              <li><%= link_to article.title, position_section_article_path(@position, section, article) %></li>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 
-    <div class='description-block'>
-        <h4>Инструменты:</h4>
-
-    </div>
-
+  <div class='stack-block'>
+    <h4>Инструменты:</h4>
+    <!-- Дополнительный контент здесь -->
+  </div>
 </div>

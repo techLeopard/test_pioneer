@@ -173,6 +173,10 @@ footer {
   margin: 20px 0;
 }
 
+.form-label {
+  color: $white;
+}
+
 
 /* LISTS */
 .articles-list, .section-list, .assignments-list, .secondary-nav, .main-nav {
@@ -299,6 +303,17 @@ footer {
 
 
 /* STACK */
+
+.stack-show-content-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.stack-block {
+  width: 35vw;
+}
 
 .stack-div {
   background-color: $gray-darker;
