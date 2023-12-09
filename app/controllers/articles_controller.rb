@@ -1,15 +1,11 @@
 class ArticlesController < ApplicationController
+  
+  before_action :set_position
   before_action :set_section
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
-  # GET /sections/:section_id/articles
-  def index
-    @articles = @section.articles
-  end
-
   # GET /sections/:section_id/articles/:id
   def show
-    # @section и @article уже установлены благодаря before_action
   end
 
   # GET /sections/:section_id/articles/new
@@ -21,7 +17,7 @@ class ArticlesController < ApplicationController
   def create
     @article = @section.articles.build(article_params)
     if @article.save
-      redirect_to [@section, @article], notice: 'Статья успешно создана.'
+      redirect_to [@position, @section, @article], notice: 'Статья успешно создана.'
     else
       render :new
     end
@@ -35,7 +31,7 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /sections/:section_id/articles/:id
   def update
     if @article.update(article_params)
-      redirect_to section_article_path(@section, @article), notice: 'Статья успешно обновлена.'
+      redirect_to position_section_article_path(@position, @section, @article), notice: 'Статья успешно обновлена.'
     else
       render :edit
     end
@@ -44,10 +40,14 @@ class ArticlesController < ApplicationController
   # DELETE /sections/:section_id/articles/:id
   def destroy
     @article.destroy
-    redirect_to section_articles_url(@section), notice: 'Статья успешно удалена.'
+    redirect_to position_section_path(@position, @section), notice: 'Статья успешно удалена.'
   end
 
   private
+
+  def set_position
+    @position = Position.find(params[:position_id])
+  end
 
   # Установка раздела
   def set_section

@@ -1,14 +1,17 @@
-<% provide(:title, @section.name)%>
+<% provide(:title, @section.title) %>
 
-<div>
-    <ul>
-      <% @sections.each do |section| %>
-        <li><%= link_to section.title, section_path(section) %></li>
-          <ul>
-            <% section.articles.each do |article| %>
-              <li><%= link_to article.title, [section, article] %></li>
-            <% end %>
-          </ul>
-      <% end %>
-    </ul>
+<%= link_to '[back]', position_path(@section.position) %> |
+<%= link_to '[edit]', edit_position_section_path(@section.position, @section) %> |
+<%= link_to '[new article]', new_position_section_article_path(@section.position, @section) %>
+<div class='delete-section-button'>
+  <%= link_to '[delete section]', position_section_path(@section.position, @section), method: :delete, data: { confirm: 'Вы уверены?' } %>
 </div>
+<h1><%= @section.title %></h1>
+
+<ul class='section-list'>
+  <% @section.articles.each do |article| %>
+    <li>
+      <%= link_to article.title, position_section_article_path(@section.position, @section, article) %>
+    </li>
+  <% end %>
+</ul>

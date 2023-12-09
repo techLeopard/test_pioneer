@@ -7,6 +7,7 @@
 <div class='stack-show-content-div'>
   <div class='stack-block'>
     <h4>Теория:</h4>
+    <%= link_to '[new section]', new_position_section_path(@position, @section) %>
     <ul>
       <% @sections.each do |section| %>
         <li>

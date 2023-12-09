@@ -9,8 +9,6 @@ class SectionsController < ApplicationController
   # GET /sections/:id
   def show
     @section = Section.find(params[:id])
-
-    redirect_to interview_wikipedia_path
   end
 
   # GET /sections/new
@@ -20,9 +18,9 @@ class SectionsController < ApplicationController
 
   # POST /sections
   def create
-    @section = Section.new(section_params)
+    @section = @position.sections.build(section_params)
     if @section.save
-      redirect_to @section
+      redirect_to position_section_path(@position, @section), notice: 'Section was successfully created.'
     else
       render :new
     end
@@ -37,7 +35,7 @@ class SectionsController < ApplicationController
   def update
     @section = Section.find(params[:id])
     if @section.update(section_params)
-      redirect_to @section
+      redirect_to [@position]
     else
       render :edit
     end
@@ -47,16 +45,18 @@ class SectionsController < ApplicationController
   def destroy
     @section = Section.find(params[:id])
     @section.destroy
-    redirect_to sections_path
+
+    redirect_to position_path
   end
 
   private
+
 
   def set_position
     @position = Position.find(params[:position_id])
   end
 
   def section_params
-    params.require(:section).permit(:title, :position_id)
+    params.require(:section).permit(:title)
   end
 end

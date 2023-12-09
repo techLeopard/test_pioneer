@@ -1,15 +1,12 @@
-<h1>Edit a section name</h1>
+<h1>Edit a section</h1>
 
-<%= form_with(model: @section, local: true) do |form| %>
-
+<%= form_with(model: [@position, @section], local: true) do |form| %>
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: "single-line-input-area" %>
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "single-line-input-area" %>
   </div>
 
-  <div class="form-actions">
-    <%= form.submit "Сохранить изменения" %>
+  <div class="actions">
+    <%= form.submit "Сохранить" %>
   </div>
 <% end %>
-
-<%= link_to 'Отмена', section_path(@section) %>
