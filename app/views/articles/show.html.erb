@@ -1,14 +1,13 @@
 <% provide(:title, @article.title) %>
 
 <div class='article-controls'>
-  <p>
-    <strong>Раздел:</strong> <%= @article.section.title %>
-  </p>
   <%= link_to '[back]', position_section_path(@article.section.position, @article.section) %> |
   <%= link_to '[edit]', edit_position_section_article_path(@article.section.position, @article.section, @article) %> |
   <%= link_to '[delete]', position_section_article_path(@position, @section, @article), method: :delete, data: { confirm: 'Вы уверены?' } %>
-
 </div>
+<p>
+  <strong>Раздел:</strong> <%= @article.section.title %>
+</p>
 
 <h1><%= @article.title %></h1>
 

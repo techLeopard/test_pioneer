@@ -1,11 +1,11 @@
 <% provide(:title, "Positions") %>
 
-<%= link_to '[back]', interview_path %> |
+<%= link_to '[back]', interview_path %>
 
 <h1>Positions</h1>
 
-<div class='stack-div'>
-    <ul class='stack-list'>    
+<div class='index-div'>
+    <ul class='index-list'>    
         <% @positions.each do |position| %>
             <li>
                 <%= link_to position.title, position_path(position) %>

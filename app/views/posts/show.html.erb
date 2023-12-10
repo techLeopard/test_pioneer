@@ -1,12 +1,13 @@
 <% provide(:title, @post.title)%>
 <div class='article-controls'>
-  <p>
-    <strong>[tool]:</strong> <%= @post.tool.title %>
-  </p>
   <%= link_to '[back]', tool_path(@tool) %> |
   <%= link_to '[edit]', edit_tool_post_path(@post.tool, @post) %> |
   <%= link_to '[delete]', tool_post_path(@tool, @post), method: :delete, data: { confirm: 'Вы уверены?' } %>
 </div>
+<p>
+  <strong>[tool]:</strong> <%= @post.tool.title %>
+</p>
+
 <h1><%= @post.title %></h1>
 
 <div class='article-text'>

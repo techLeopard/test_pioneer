@@ -1,12 +1,12 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "Test Pioneer", root_path, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",   root_path %></li>
-        <li><%= link_to "Interview",   interview_path %></li>
-        <li><%= link_to "Log in", '#' %></li>
-      </ul>
-    </nav>
-  </div>
+<header>
+  <%= link_to root_path do %>
+    <%= image_tag 'logo.png', alt: 'Test Pioneer Logo', height: '50' %>
+  <% end %>
+  <nav>
+    <ul class="nav__links">
+      <li><a href="<%= root_path %>">Home</a></li>
+      <li><a href="<%= interview_path %>">Interview</a></li>
+      <li><a href="#">Log in</a></li>
+    </ul>
+  </nav>
 </header>
