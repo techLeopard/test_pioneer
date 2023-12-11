@@ -1,0 +1,12 @@
+<h1>Edit a tool section</h1>
+
+<%= form_with(model: [@position, @tool_section], local: true) do |form| %>
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "single-line-input-area" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Сохранить" %>
+  </div>
+<% end %>

@@ -1,9 +1,11 @@
 class FeaturesController < ApplicationController
+
+    before_action :set_position
+    before_action :set_tool_section
     before_action :set_tool
     before_action :set_feature, only: [:show, :edit, :update, :destroy]
   
     def new
-      @tool = Tool.find(params[:tool_id])
       @feature = @tool.features.build
     end
     
@@ -11,10 +13,9 @@ class FeaturesController < ApplicationController
     end
 
     def create
-      @tool = Tool.find(params[:tool_id])
       @feature = @tool.features.build(feature_params)
       if @feature.save
-        redirect_to tool_path(@tool), notice: 'Feature was successfully created.'
+        redirect_to [@position, @tool_section, @tool, @feature], notice: 'Feature was successfully created.'
       else
         render :new
       end
@@ -33,11 +34,20 @@ class FeaturesController < ApplicationController
   
     def destroy
       @feature.destroy
-      redirect_to tool_features_path(@tool), notice: 'Feature was successfully destroyed.'
+      redirect_to tool_path(@tool), notice: 'Feature was successfully destroyed.'
     end
   
     private
+    def set_position
+      @position = Position.find(params[:position_id])
+    end
   
+    # Установка раздела
+    def set_tool_section
+      @tool_section = ToolSection.find(params[:tool_section_id])
+    end
+  
+    # Установка статьи
     def set_tool
       @tool = Tool.find(params[:tool_id])
     end

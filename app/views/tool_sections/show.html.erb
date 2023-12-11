@@ -1,0 +1,17 @@
+<% provide(:title, @tool_section.title) %>
+
+<%= link_to '[back]', position_path(@tool_section.position) %> |
+<%= link_to '[edit]', edit_position_tool_section_path(@tool_section.position, @tool_section) %> |
+<%= link_to '[new tool]', new_position_tool_section_tool_path(@tool_section.position, @tool_section) %>
+<div class='delete-section-button'>
+  <%= link_to '[delete section]', position_tool_section_path(@tool_section.position, @tool_section), method: :delete, data: { confirm: 'Вы уверены?' } %>
+</div>
+<h1><%= @tool_section.title %></h1>
+
+<ul class='section-list'>
+  <% @tool_section.tools.each do |tool| %>
+    <li>
+      <%= link_to tool.title, position_tool_section_tool_path(@tool_section.position, @tool_section, tool) %>
+    </li>
+  <% end %>
+</ul>

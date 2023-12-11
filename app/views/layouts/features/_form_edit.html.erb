@@ -1,6 +1,6 @@
 <h1>Edit a tool name</h1>
 
-<%= form_with(model: @tool, local: true) do |form| %>
+<%= form_with(model: [@position, @tool_section, @tool, @feature], local: true) do |form| %>
 
   <div class="field">
     <%= form.label :feature %>

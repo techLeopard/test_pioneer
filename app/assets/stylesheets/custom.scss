@@ -108,6 +108,7 @@ header {
   align-items: center;
   padding: 10px 10%;
   margin-bottom: 1.5em;
+  border-bottom: solid 1px $link-blue;
 }
 
 .logo {
@@ -116,6 +117,7 @@ header {
 
 .nav__links {
   list-style-type: none;
+  margin-bottom: 0;
 }
 
 .nav__links li {
@@ -222,7 +224,6 @@ footer {
 .tool-contents {
   flex: 0 0 auto;
   padding: 2em;
-  width: 300px;
 }
 
 .tool-posts-list {
@@ -231,7 +232,7 @@ footer {
 }
 
 .tool-logo {
-  width: 60px
+  width: 60px;
 }
 
 .tool-title {
@@ -247,18 +248,9 @@ footer {
   color: $black-dark;
 }
 
-.description-block {
-  h4 {
-    margin-bottom: 0.5em;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-  }
-}
 
-
-/* content-div has card on the left and descr on the left */
 .content-div {
   display: flex;
-  justify-content: space-between;
   align-items: flex-start; /* Выровнять содержимое по верхнему краю */
   gap: 2em; /* Расстояние между карточкой и описанием */
 }
@@ -281,13 +273,22 @@ footer {
   }
 }
 
+/* Tool Description */
+
+.description {
+  width: auto;
+  display: flexbox;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
 
 .description-block {
   margin-bottom: 2em;
   color: $black-dark;
   h4 {
     font-weight: 700;
-    border-bottom: solid 2px $gray;
+    border-bottom: solid 1px $gray;
     padding-bottom: 0.5em;
   }
 }
@@ -341,7 +342,7 @@ footer {
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-decoration: underline;
     text-decoration-color: $link-blue;
-    text-underline-offset: 0.2em;
+    text-underline-offset: 0.3em;
   }
   a:hover {
     text-decoration: none;

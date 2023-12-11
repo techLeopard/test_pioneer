@@ -7,7 +7,7 @@
 <div class='stack-show-content-div'>
   <div class='stack-block'>
     <h4>Теория:</h4>
-    <%= link_to '[new section]', new_position_section_path(@position, @section) %>
+    <%= link_to '[new section]', new_position_section_path(@position) %>
     <ul>
       <% @sections.each do |section| %>
         <li>
@@ -24,6 +24,18 @@
 
   <div class='stack-block'>
     <h4>Инструменты:</h4>
-    <!-- Дополнительный контент здесь -->
+    <%= link_to '[new tool category]', new_position_tool_section_path(@position) %>
+    <ul>
+      <% @tool_sections.each do |tool_section| %>
+        <li>
+          <%= link_to tool_section.title, position_tool_section_path(@position, tool_section) %>
+          <ul>
+            <% tool_section.tools.each do |tool| %>
+              <li><%= link_to tool.title, position_tool_section_tool_path(@position, tool_section, tool) %></li>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
+    </ul>    
   </div>
 </div>

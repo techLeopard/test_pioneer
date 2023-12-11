@@ -1,6 +1,6 @@
-<h1>Edit a tool name</h1>
+<h1>Edit a tool post</h1>
 
-<%= form_with(model: @tool, local: true) do |form| %>
+<%= form_with(model: [@position, @tool_section, @tool], local: true) do |form| %>
 
   <div class="field">
     <%= form.label :title %>
@@ -42,4 +42,4 @@
   </div>
 <% end %>
 
-<%= link_to 'Отмена', tool_path(@tool) %>
+<%= link_to 'Отмена', position_tool_section_tool_path(@position, @tool_section, @tool) %>

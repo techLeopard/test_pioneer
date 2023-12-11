@@ -1,0 +1,19 @@
+<% provide(:title, 'Tool Sections') %>
+
+<%= link_to '[back]', interview_path %> |
+<%= link_to "[add section]", new_tool_section_path %>
+
+<h1>Tool Sections</h1>
+
+<div>
+  <ul class='contents-list'>
+    <% @tool_sections.each do |tool_section| %>
+      <li><%= link_to tool_section.title, tool_section_tools_path(tool_section) %></li>
+        <ul class='articles-list'>
+          <% tool_section.tools.each do |tool| %>
+            <li><%= link_to tool.title, [tool_section, tool] %></li>
+          <% end %>
+        </ul>
+    <% end %>
+  </ul>
+</div>

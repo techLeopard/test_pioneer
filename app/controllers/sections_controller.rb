@@ -2,9 +2,6 @@ class SectionsController < ApplicationController
   before_action :set_position
 
 # GET /sections
-  def index
-    @sections = Section.all
-  end
 
   # GET /sections/:id
   def show

@@ -6,7 +6,4 @@ class InterviewsController < ApplicationController
     def structure
     end
 
-    def tools
-    end
-
 end

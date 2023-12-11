@@ -19,15 +19,16 @@ Rails.application.routes.draw do
     resources :sections do
       resources :articles
     end
-  end
-
-  resources :assignments
-
-  resources :tools do
-    resources :posts
-    resources :features
+    resources :tool_sections do
+      resources :tools do
+        resources :posts
+        resources :features
+      end
+    end
   end
   
+
+  resources :assignments
 
   resources :notes
 end

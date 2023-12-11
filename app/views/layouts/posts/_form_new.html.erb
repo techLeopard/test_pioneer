@@ -1,4 +1,4 @@
-<%= form_with(model: [@tool, @post], local: true) do |form| %>
+<%= form_with(model: [@position, @tool_section, @tool, @post], local: true) do |form| %>
 
   <div>
     <%= form.label :title %>
@@ -11,9 +11,6 @@
   </div>
 
   <div class="form-actions">
-    <%= form.submit "[save]" %>
+    <%= form.submit "Создать Статью" %>
   </div>
-
 <% end %>
-
-<%= link_to 'Отмена', tool_post_path(@tool, @post) %>

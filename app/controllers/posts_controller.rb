@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
+
+  before_action :set_position
+  before_action :set_tool_section
   before_action :set_tool
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /tools/:tool_id/posts
-  def index
-    @posts = @tool.posts
-  end
 
   # GET /tools/:tool_id/posts/:id
   def show
@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   def create
     @post = @tool.posts.build(post_params)
     if @post.save
-      redirect_to [@tool, @post], notice: 'Статья успешно создана.'
+      redirect_to [@position, @tool_section, @tool, @post], notice: 'Статья успешно создана.'
     else
       render :new
     end
@@ -34,19 +34,30 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to [@tool, @post], notice: 'Статья успешно обновлена.'
+      redirect_to position_tool_section_tool_post_path(@position, @tool_section, @tool, @post), notice: 'Статья успешно обновлена.'
     else
       render :edit
     end
   end
 
 
+
   def destroy
     @post.destroy
-    redirect_to tool_path(@tool), notice: 'Статья успешно удалена.'
+    redirect_to position_tool_section_tool_path(@position, @tool_section, @tool), notice: 'Статья успешно удалена.'
   end
 
   private
+    # Установка позиции
+    def set_position
+      @position = Position.find(params[:position_id])
+    end
+
+    # Установка tool_section
+    def set_tool_section
+      @tool_section = ToolSection.find(params[:tool_section_id])
+    end
+
     # Установка раздела
     def set_tool
       @tool = Tool.find(params[:tool_id])
@@ -54,7 +65,7 @@ class PostsController < ApplicationController
 
     # Установка статьи
     def set_post
-      @post = @tool.posts.find_by(id: params[:id])
+      @post = @tool.posts.find(params[:id])
       redirect_to(root_url, alert: "Post not found.") if @post.nil?
     end
     
