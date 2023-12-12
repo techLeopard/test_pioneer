@@ -1,5 +1,5 @@
 <% provide(:title, @post.title)%>
-<div class='article-controls'>
+<div class='article__controls'>
   <%= link_to '[back]', position_tool_section_tool_path(@position, @tool_section, @tool) %> |
   <%= link_to '[edit]', edit_position_tool_section_tool_post_path(@position, @tool_section, @tool, @post) %> |
   <%= link_to '[delete]', position_tool_section_tool_post_path(@position, @tool_section, @tool, @post), method: :delete, data: { confirm: 'Вы уверены?' } %>
@@ -10,6 +10,6 @@
 
 <h1><%= @post.title %></h1>
 
-<div class='article-text'>
+<div class='article__text__div'>
   <p><%= @post.content.html_safe %></p>
 </div>

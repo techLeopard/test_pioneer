@@ -8,7 +8,7 @@
 </div>
 <h1><%= @section.title %></h1>
 
-<ul class='section-list'>
+<ul class='index-list'>
   <% @section.articles.each do |article| %>
     <li>
       <%= link_to article.title, position_section_article_path(@section.position, @section, article) %>

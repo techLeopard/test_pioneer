@@ -1,10 +1,10 @@
 <% provide(:title, "Feature")%>
-<div class='article-controls'>
+<div class='article__controls'>
   <%= link_to '[back]', position_tool_section_tool_path(@tool.tool_section.position, @tool.tool_section, @tool) %> |
   <%= link_to '[edit]', edit_position_tool_section_tool_feature_path(@feature.tool.tool_section.position, @feature.tool.tool_section, @feature.tool, @feature) %> |
   <%= link_to '[delete]', position_tool_section_tool_feature_path(@position, @tool_section, @tool, @feature), method: :delete, data: { confirm: 'Вы уверены?' } %>
 </div>
 
-<div class='article-text'>
+<div class='article__text__div'>
   <p><%= @feature.description %></p>
 </div>
