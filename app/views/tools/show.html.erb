@@ -27,12 +27,12 @@
 
     <div class='description'>
         <div class='description-block'>    
-            <h4>Описание</h4>
+            <h4 class='description-block-title'>Описание</h4>
             <p><%= @tool.description.html_safe %></p>
         </div>
 
         <div class='description-block'>    
-            <h4>Ключевая функциональность</h4>
+            <h4 class='description-block-title'>Ключевая функциональность</h4>
             <%= link_to '[add feature]', new_position_tool_section_tool_feature_path(@tool.tool_section.position,@tool.tool_section, @tool, @feature) %>
             <ul>
                 <% @tool.features.each do |feature| %>
@@ -42,12 +42,12 @@
         </div>
 
         <div class='description-block'>
-            <h4>История</h4>
+            <h4 class='description-block-title'>История</h4>
             <p><%= @tool.history.html_safe %></p>
         </div>
 
         <div class='description-block'>
-            <h4>Статьи</h4>
+            <h4 class='description-block-title'>Статьи</h4>
             <%= link_to '[add article]', new_position_tool_section_tool_post_path(@tool.tool_section.position, @tool.tool_section, @tool, @post) %>
                 <ul class='tool-posts-list'>
                     <% @tool.posts.each do |post| %>

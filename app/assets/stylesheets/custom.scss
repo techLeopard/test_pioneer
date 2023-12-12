@@ -286,11 +286,12 @@ footer {
 .description-block {
   margin-bottom: 2em;
   color: $black-dark;
-  h4 {
-    font-weight: 700;
-    border-bottom: solid 1px $gray;
-    padding-bottom: 0.5em;
-  }
+}
+
+.description-block-title {
+  font-weight: 700;
+  border-bottom: solid 1px $gray;
+  padding-bottom: 0.5em;
 }
 
 
@@ -353,4 +354,14 @@ footer {
 
 .created-at {
   color: $link-blue;
+}
+
+
+/* NOTES */
+.notes__content__div {
+  h1 {
+    text-decoration: underline;
+    text-decoration-color: $link-blue;
+    text-underline-offset: 0.3em;
+  }
 }

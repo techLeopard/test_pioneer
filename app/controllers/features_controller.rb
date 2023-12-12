@@ -15,7 +15,7 @@ class FeaturesController < ApplicationController
     def create
       @feature = @tool.features.build(feature_params)
       if @feature.save
-        redirect_to [@position, @tool_section, @tool, @feature], notice: 'Feature was successfully created.'
+        redirect_to [@position, @tool_section, @tool], notice: 'Feature was successfully created.'
       else
         render :new
       end

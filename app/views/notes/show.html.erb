@@ -4,9 +4,11 @@
 <%= link_to '[edit]', edit_note_path(@note) %>
 <%= link_to '[delete]', note_path(@note), method: :delete, data: { confirm: 'Вы уверены?' } %>
 
-<h1><%= @note.title %></h1>
-<h4 class='created-at'><%= @note.created_at.strftime("%B %d, %Y") %></h6>
+<div class="notes__content__div">
+    <h1><%= @note.title %></h1>
+    <h6 class='created-at'><%= @note.created_at.strftime("%B %d, %Y") %></h6>
 
-<p>
-    <%= @note.content.html_safe %>
-</p>
+    <p>
+        <%= @note.content.html_safe %>
+    </p>
+</div>

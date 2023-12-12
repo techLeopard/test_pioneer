@@ -13,6 +13,11 @@ class PositionsController < ApplicationController
           redirect_to positions_path, alert: 'Position not found'
         end
     end
-      
+    
+    def destroy
+      @postion.destroy
+
+      redirect_to positions_path
+    end
 
 end
