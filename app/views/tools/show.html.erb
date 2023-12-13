@@ -27,6 +27,16 @@
 
     <div class='description'>
 
+        <div class='description-block'>
+            <h4 class='description-block-title'>Статьи</h4>
+            <%= link_to '[add article]', new_position_tool_section_tool_post_path(@tool.tool_section.position, @tool.tool_section, @tool, @post) %>
+                <ul class='tool-posts-list'>
+                    <% @tool.posts.each do |post| %>
+                    <li><%= link_to post.title, position_tool_section_tool_post_path(@tool.tool_section.position, @tool.tool_section, @tool, post) %></li>
+                    <% end %>
+                </ul>
+        </div>
+
         <div class='description-block'>    
             <h4 class='description-block-title'>Описание</h4>
             <p><%= @tool.description.html_safe %></p>
@@ -47,15 +57,6 @@
             <p><%= @tool.history.html_safe %></p>
         </div>
 
-        <div class='description-block'>
-            <h4 class='description-block-title'>Статьи</h4>
-            <%= link_to '[add article]', new_position_tool_section_tool_post_path(@tool.tool_section.position, @tool.tool_section, @tool, @post) %>
-                <ul class='tool-posts-list'>
-                    <% @tool.posts.each do |post| %>
-                    <li><%= link_to post.title, position_tool_section_tool_post_path(@tool.tool_section.position, @tool.tool_section, @tool, post) %></li>
-                    <% end %>
-                </ul>
-        </div>
     </div>
 
 </div>
