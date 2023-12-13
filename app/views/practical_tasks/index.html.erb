@@ -1,0 +1,17 @@
+<% provide(:title, 'Practical Tasks')%>
+  
+  <%= link_to '[back]', position_section_article_path(@position, @section, @article) %>
+  <%= link_to '[add task]', new_position_section_article_practical_task_path(@position, @section, @article, @practical_task) %>
+
+
+  <h1>Practical Tasks</h1>
+
+  <div class='index-div'>
+    <ul class ='index-list'>
+      <% @article.practical_tasks.each do |practical_task| %>
+      <li>
+        <%= link_to practical_task.title, position_section_article_practical_task_path(@position, @section, @article, practical_task) %>
+      </li>
+      <% end %>
+    </ul>
+  </div>

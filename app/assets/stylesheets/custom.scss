@@ -359,14 +359,23 @@ footer {
   }
 }
 
-.article__div  .article__title {
-  color: $black-dark;
-  font-size: 2em;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  text-decoration: underline;
-  text-decoration-color: $accent-blue;
-  text-underline-offset: 0.3em;
-}
+.article__div {
+  .article__title {
+    color: $black-dark;
+    font-size: 2em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: underline;
+    text-decoration-color: $accent-blue;
+    text-underline-offset: 0.3em;
+  }
+  .article__section {
+    span {
+      font-weight: 700;
+    }
+  }
+}  
+
+
 
 .article__text__div {
   color: $black-dark;

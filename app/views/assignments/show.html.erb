@@ -1,7 +1,7 @@
 <% provide(:title, "Assignment") %>
 
-<%= link_to '[back]', assignments_path %> |
-<%= link_to '[edit]', edit_assignment_path(@assignment) %> |
+<%= link_to '[back]', assignments_path %>
+<%= link_to '[edit]', edit_assignment_path(@assignment) %>
 <%= link_to '[delete]', @assignment, method: :delete, data: { confirm: 'Вы уверены?' } %>
 
 <h1><%= @assignment.title %></h1>

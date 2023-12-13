@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_10_154456) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_13_081914) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -70,6 +70,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_10_154456) do
     t.index ["tool_id"], name: "index_posts_on_tool_id"
   end
 
+  create_table "practical_tasks", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.integer "article_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_practical_tasks_on_article_id"
+  end
+
   create_table "sections", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
@@ -90,7 +99,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_10_154456) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
-    t.string "category"
     t.string "documentation_link"
     t.string "logo_path"
     t.string "platform"
@@ -108,5 +116,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_10_154456) do
   add_foreign_key "articles", "sections"
   add_foreign_key "features", "tools"
   add_foreign_key "posts", "tools"
+  add_foreign_key "practical_tasks", "articles"
   add_foreign_key "tool_sections", "positions"
 end

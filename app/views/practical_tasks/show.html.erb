@@ -1,0 +1,24 @@
+<% provide(:title, @practical_task.title) %>
+
+<div class='article__controls'>
+  <%= link_to '[back]', position_section_article_practical_tasks_path(@position, @section, @article, @practical_tasks ) %>
+  <%= link_to '[edit]', edit_position_section_article_practical_task_path(@position, @section, @article, @practical_task) %>
+  <%= link_to '[delete]', position_section_article_practical_task_path(@position, @section, @article, @practical_task), method: :delete, data: { confirm: 'Вы уверены?' } %>
+</div>
+
+
+<div class='article__div'>
+
+    <div class='article__section'>
+        <span>Раздел:</span> 
+        <%= @article.title %>
+    </div>
+
+
+  <h1 class='article__title'><%= @practical_task.title %></h1>
+
+  <div class='article__text__div'>
+    <p class='article__text'><%= @practical_task.content.html_safe %></p>
+  </div>
+
+</div>

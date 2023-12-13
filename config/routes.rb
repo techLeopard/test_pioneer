@@ -17,7 +17,9 @@ Rails.application.routes.draw do
 
   resources :positions do
     resources :sections do
-      resources :articles
+      resources :articles do
+        resources :practical_tasks
+      end
     end
     resources :tool_sections do
       resources :tools do
