@@ -1,6 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+
 /* mixins, variables,etc. */
 
 $gray-light: #777;
@@ -360,6 +362,25 @@ footer {
 }
 
 .article__div {
+
+  .article__section__title__div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    a {
+      font-size: 1.3em;
+      font-family: monospace;
+      color: $accent-blue;
+    }
+    a:hover {
+      font-size: 1.8em;
+      font-weight: 700;
+      text-decoration: none;
+      background-color: #cdfeaa;
+    }
+  } 
+
   .article__title {
     color: $black-dark;
     font-size: 2em;
@@ -368,17 +389,12 @@ footer {
     text-decoration-color: $accent-blue;
     text-underline-offset: 0.3em;
   }
-  .article__section {
-    span {
-      font-weight: 700;
-    }
+
+  .article__text__div {
+    color: $black-dark;
+    margin-top: 2em;
   }
-}  
 
-
-
-.article__text__div {
-  color: $black-dark;
-  margin-top: 2em;
 }
+
 
