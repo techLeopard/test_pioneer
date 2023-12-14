@@ -20,7 +20,7 @@ class PracticalTasksController < ApplicationController
     def create
       @practical_task = @article.practical_tasks.build(practical_task_params)
       if @practical_task.save
-        redirect_to [@position, @section, @article, @practical_tasks], notice: 'Статья успешно создана.'
+        redirect_to [@position, @section, @article, @practical_task], notice: 'Статья успешно создана.'
       else
         render :new
       end

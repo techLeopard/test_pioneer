@@ -354,11 +354,12 @@ footer {
 
 /* Article Show */
 
-.article__controls {
+.article__controls__div {
   margin-bottom: 1.5em;
-  p {
-    color: $black-dark;
-  }
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .article__div {

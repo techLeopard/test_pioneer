@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     post '/assignments', to: 'assignments#create' # если нужен
     get '/tools', to: 'tools#index', as: 'interview_tools'
     get '/stack', to: 'positions#index', as: 'interview_stack'
+    get '/remarks', to: 'remarks#index', as: 'interview_remarks'
   end
 
   resources :positions do
@@ -33,4 +34,7 @@ Rails.application.routes.draw do
   resources :assignments
 
   resources :notes
+
+  resources :remarks
+
 end

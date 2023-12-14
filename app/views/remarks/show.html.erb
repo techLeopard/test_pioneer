@@ -1,0 +1,12 @@
+<% provide(:title, @remark.title) %>
+
+<%= link_to '[back]', interview_remarks_path %>
+<%= link_to '[edit]', edit_remark_path(@remark) %>
+<%= link_to '[delete]', remark_path(@remark), method: :delete, data: { confirm: 'Вы уверены?' } %>
+
+<div class='article__div'>
+    <h1 class='article__title'><%= @remark.title %></h1>
+    <div class='article__text__div'>
+      <p class='article__text'><%= @remark.content.html_safe %></p>
+    </div>
+</div>

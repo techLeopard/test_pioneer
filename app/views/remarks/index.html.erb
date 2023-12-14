@@ -1,0 +1,18 @@
+<% provide(:title, 'Lloyd')%>
+
+<%= link_to 'back', interview_path %>
+<%= link_to "add remark", new_remark_path(@remark) %>
+
+<h1>Lloyd</h1>
+
+
+<div class='index-div'>
+
+    <ul class='index-list'>
+        <% @remarks.each do |remark| %>
+            <li>
+                <%= link_to remark.title, remark_path(remark) %>
+            </li>
+        <% end %>
+    </ul>
+</div>
