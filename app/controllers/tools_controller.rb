@@ -57,6 +57,6 @@ class ToolsController < ApplicationController
 
   # Strong parameters
   def tool_params
-    params.require(:tool).permit(:title, :description, :category, :documentation_link, :logo_path, :platform, :history, :tool_section_id)
+    params.require(:tool).permit(:title, :description, :documentation_link, :logo_path, :platform, :history, :tool_section_id)
   end
 end
