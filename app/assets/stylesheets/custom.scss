@@ -325,7 +325,7 @@ footer {
   }
   a {
     color: $black-dark;
-    font-size: 2em;
+    font-size: 1.5em;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-decoration: underline;
     text-decoration-color: $accent-blue;
@@ -385,7 +385,7 @@ footer {
   .article__title {
     color: $black-dark;
     font-size: 2em;
-    font-family: monospace;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     text-decoration: underline;
     text-decoration-color: $accent-blue;
     text-underline-offset: 0.3em;

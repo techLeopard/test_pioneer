@@ -3,7 +3,7 @@
 <%= link_to '[back]', position_path(@section.position) %>
 <%= link_to '[edit]', edit_position_section_path(@section.position, @section) %>
 <%= link_to '[new article]', new_position_section_article_path(@section.position, @section) %>
-
+ 
 <div class='delete-section-button'>
   <%= link_to '[delete section]', position_section_path(@section.position, @section), method: :delete, data: { confirm: 'Вы уверены?' } %>
 </div>
