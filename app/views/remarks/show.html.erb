@@ -1,6 +1,6 @@
 <% provide(:title, @remark.title) %>
 
-<%= link_to '[back]', interview_remarks_path %>
+<%= link_to '[back to all remarks]', interview_remarks_path %>
 <%= link_to '[edit]', edit_remark_path(@remark) %>
 <%= link_to '[delete]', remark_path(@remark), method: :delete, data: { confirm: 'Вы уверены?' } %>
 
