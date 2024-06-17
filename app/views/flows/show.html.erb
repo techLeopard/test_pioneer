@@ -1,0 +1,8 @@
+<%= link_to '[back]', flows_path %>
+<%= link_to '[edit]', edit_flow_path(@flow) %>
+<%= link_to '[delete]', @flow, method: :delete, data: { confirm: 'Вы уверены?' } %>
+
+<h1><%= @flow.title %></h1>
+<p>Completed: <%= @flow.completed %></p>
+<p>Description:</p>
+<p><%= @flow.description.html_safe %></p>

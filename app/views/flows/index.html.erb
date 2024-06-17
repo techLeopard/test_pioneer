@@ -1,0 +1,33 @@
+<% provide(:title, "Flows") %>
+
+<div class='top-nav-button'>
+    <%= link_to '[back]', interview_path %>
+    <%= link_to '[new flow]', new_flow_path %>
+</div>
+
+<h1>Flows</h1>
+
+<p>Flow is a tool to control tasks.</p>
+
+<p>
+    First, you create a task.
+    Keep you tasks as a to-do list.
+</p>
+
+<p>
+    Each task consists of:
+    <ul>
+        <li>steps</li>
+        <li>resources</li>
+        <li>status</li>
+    </ul>
+    Videos to watch.
+    Articles to read.
+    Best videos and articles I save to a verified (recommended) list.
+</p>
+
+<ul class = 'index-list'>
+    <% @flows.each do |flow| %>
+    <li><%= link_to flow.title, flow_path(flow) %></li>
+    <% end %>
+</ul>

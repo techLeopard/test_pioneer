@@ -15,11 +15,6 @@
       <% @sections.each do |section| %>
         <li>
           <%= link_to section.title, position_section_path(@position, section) %>
-          <ul>
-            <% section.articles.each do |article| %>
-              <li><%= link_to article.title, position_section_article_path(@position, section, article) %></li>
-            <% end %>
-          </ul>
         </li>
       <% end %>
     </ul>

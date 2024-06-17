@@ -37,4 +37,6 @@ Rails.application.routes.draw do
 
   resources :remarks
 
+  resources :flows
+
 end

@@ -10,8 +10,8 @@
 <div class='article__div'>
 
   <div class='article__section__title__div'>
-    <%= link_to '<< '+ @section.title, position_section_path(@position, @section) %>
-    <%= link_to 'Practical Tasks >>', position_section_article_practical_tasks_path(@position, @section, @article, @practical_tasks) %>
+    <%= link_to '< '+ @section.title, position_section_path(@position, @section) %>
+    <%= link_to 'Practical Tasks >', position_section_article_practical_tasks_path(@position, @section, @article, @practical_tasks) %>
   </div>
 
   <h1 class='article__title'><%= @article.title %></h1>

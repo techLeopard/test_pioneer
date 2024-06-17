@@ -40,3 +40,22 @@ guard :minitest do
   # watch(%r{^app/helpers/(.*)\.rb$})     { |m| "test/helpers/#{m[1]}_test.rb" }
   # watch(%r{^app/models/(.*)\.rb$})      { |m| "test/unit/#{m[1]}_test.rb" }
 end
+
+guard 'rails', force_run: true do
+  watch('Gemfile.lock')
+  watch(%r{^(config|lib)/.*})
+  watch(%r{^config/environments/.*})
+  watch(%r{^config/initializers/.*})
+  watch(%r{^config/routes.rb})
+  watch(%r{^db/schema.rb})
+  watch(%r{^app/(controllers|helpers|models|views)/.*})
+end
+
+guard 'livereload' do
+  watch(%r{app/views/.+\.(erb|haml|slim)})
+  watch(%r{app/helpers/.+\.rb})
+  watch(%r{public/.+})
+  watch(%r{config/locales/.+\.yml})
+  watch(%r{app/assets/javascripts/.+\.js})
+  watch(%r{app/assets/stylesheets/.+\.scss})
+end
