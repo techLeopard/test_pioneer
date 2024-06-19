@@ -9,7 +9,7 @@
 
 <div class='stack-show-content-div'>
   <div class='stack-block'>
-    <h4>Теория:</h4>
+    <h4>Теория</h4>
     <%= link_to '[new section]', new_position_section_path(@position) %>
     <ul>
       <% @sections.each do |section| %>
@@ -25,20 +25,16 @@
     <div class ='all-tools'>
       <h4>All Tools</h4>
       <ul>
-        <li>Java</li>
-        <li>IntelliJ IDEA Community Edition</li>
-        <li>IntelliJ project</li>
-        <li>Maven project</li>
-        <li>JUnit</li>
-        <li>Page Object Model</li>
-        <li>Selenium Webdriver</li>
-        <li>TestNG</li>
-        <li>Selenide</li>
+        <% @tool_sections.each do |tool_section| %>
+          <% tool_section.tools.each do |tool| %>
+            <li><%= link_to tool.title, position_tool_section_tool_path(@position, tool_section, tool) %></li>
+          <% end %>
+        <% end %>
       </ul>
     </div>
 
 
-    <h4>Инструменты:</h4>
+    <h4>Инструменты</h4>
 
     <%= link_to '[new tool category]', new_position_tool_section_path(@position) %>
     <ul>

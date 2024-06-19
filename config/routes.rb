@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "/contact", to: "static_pages#contact"
   get "/signup", to: "users#new"
 
+
   scope '/interview' do
     get '/', to: 'interviews#index', as: 'interview'
     get '/notes', to: 'notes#index', as: 'interview_notes'
