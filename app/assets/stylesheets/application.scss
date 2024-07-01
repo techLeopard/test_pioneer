@@ -23,7 +23,8 @@ $black: #000;
 /* dark-theme */
 $dark-theme-light-grey: rgb(43, 45, 48);
 $dark-theme-dark-grey: rgb(30,31,33);
-$dark-theme-text-color: rgb(186, 186, 186);
+$dark-theme-text: rgb(186, 186, 186);
+$dark-theme-orange: rgb(238, 157, 56);
 
 /* light-theme */
 $gray-light: #777;
@@ -44,7 +45,7 @@ body {
   font-family: "Proxima Nova", serif;
   font-size: 18px;
   background-color: $dark-theme-dark-grey;
-  color: $dark-theme-text-color;
+  color: $dark-theme-text;
 }
 /* BODY end */
 
@@ -58,9 +59,8 @@ body {
 .index-list {
   padding: 0 2em;
   li a {
-    color: $dark-theme-text-color;
+    color: $dark-theme-text;
     font-weight: 300;
-    text-underline-offset: 0.3em;
   }
   a:hover {
     text-decoration: none;
@@ -87,7 +87,7 @@ body {
     text-underline-offset: 0.2em;
   }
   ul li a {
-    color: $dark-theme-text-color;
+    color: $dark-theme-text;
   }
   a:hover {
     text-decoration: none;
@@ -114,7 +114,7 @@ body {
     justify-content: space-between;
     align-items: center;
     a {
-      color: $dark-theme-text-color;
+      color: $dark-theme-text;
     }
     a:hover {
       text-decoration: none;

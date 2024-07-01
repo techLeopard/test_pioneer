@@ -1,15 +1,12 @@
-<h1>Edit a tool name</h1>
-
 <%= form_with(model: [@position, @tool_section, @tool, @feature], local: true) do |form| %>
-
   <div class="field">
     <%= form.label :feature %>
     <%= form.text_field :feature, class: "single-line-input-area" %>
   </div>
 
   <div class="form-actions">
-    <%= form.submit "Сохранить изменения" %>
+    <%= form.submit "save changes" %>
   </div>
 <% end %>
 
-<%= link_to 'Отмена', tool_path(@tool) %>
+<%= link_to 'Отмена', position_tool_section_tool_path(@position, @tool_section, @tool) %>

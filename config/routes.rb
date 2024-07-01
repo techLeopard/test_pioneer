@@ -5,17 +5,20 @@ Rails.application.routes.draw do
   get "/signup", to: "users#new"
 
 
-  scope '/interview' do
-    get '/', to: 'interviews#index', as: 'interview'
-    get '/notes', to: 'notes#index', as: 'interview_notes'
-    get '/structure', to: 'interviews#structure', as: 'interview_structure'
-    get '/dump', to: 'interviews#dump', as: 'interview_dump'
+  scope '/learning' do
+    get '/', to: 'learning#index', as: 'learning'
+    get '/notes', to: 'notes#index', as: 'learning_notes'
+    get '/structure', to: 'learning#structure', as: 'learning_structure'
+    get '/dump', to: 'learning#dump', as: 'learning_dump'
     get '/assignments', to: 'assignments#index', as: 'interview_assignments'
     post '/assignments', to: 'assignments#create' # если нужен
-    get '/tools', to: 'tools#index', as: 'interview_tools'
-    get '/stack', to: 'positions#index', as: 'interview_stack'
-    get '/remarks', to: 'remarks#index', as: 'interview_remarks'
+    get '/tools', to: 'tools#index', as: 'learning_tools'
+    get '/stack', to: 'positions#index', as: 'learning_stack'
+    get '/remarks', to: 'remarks#index', as: 'learning_remarks'
   end
+
+  get '/software-dev', to: 'software_dev#index', as: 'software_dev'
+  get '/software-test', to: 'software_test#index', as: 'software_test' # as: это в каком виде прописывать path
 
   resources :positions do
     resources :sections do

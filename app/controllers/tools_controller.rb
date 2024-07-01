@@ -14,7 +14,7 @@ class ToolsController < ApplicationController
   def create
     @tool = @tool_section.tools.build(tool_params)
     if @tool.save
-      redirect_to [@position, @tool_section, @tool], notice: 'Статья успешно создана.'
+      redirect_to position_tool_section_tool_path(@position, @tool_section, @tool), notice: 'Статья успешно создана.'
     else
       render :new
     end

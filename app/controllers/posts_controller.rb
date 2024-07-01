@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   def create
     @post = @tool.posts.build(post_params)
     if @post.save
-      redirect_to [@position, @tool_section, @tool, @post], notice: 'Статья успешно создана.'
+      redirect_to position_tool_section_tool_post_path(@position, @tool_section, @tool, @post), notice: 'Статья успешно создана.'
     else
       render :new
     end

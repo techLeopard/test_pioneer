@@ -15,7 +15,7 @@ class FeaturesController < ApplicationController
     def create
       @feature = @tool.features.build(feature_params)
       if @feature.save
-        redirect_to [@position, @tool_section, @tool], notice: 'Feature was successfully created.'
+        redirect_to position_tool_section_tool_feature_path(@position, @tool_section, @tool, @feature), notice: 'Feature was successfully created.'
       else
         render :new
       end
@@ -26,7 +26,7 @@ class FeaturesController < ApplicationController
   
     def update
       if @feature.update(feature_params)
-        redirect_to tool_feature_path(@tool, @feature), notice: 'Feature was successfully updated.'
+        redirect_to position_tool_section_tool_feature_path(@position, @tool_section, @tool, @feature), notice: 'Feature was successfully updated.'
       else
         render :edit
       end
@@ -34,7 +34,7 @@ class FeaturesController < ApplicationController
   
     def destroy
       @feature.destroy
-      redirect_to tool_path(@tool), notice: 'Feature was successfully destroyed.'
+      redirect_to position_tool_section_tool_path(@tool), notice: 'Feature was successfully destroyed.'
     end
   
     private

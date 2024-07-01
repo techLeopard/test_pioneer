@@ -1,0 +1,21 @@
+<% provide(:title, 'Software Test') %>
+
+<div class='top-nav-button'>
+  <%= link_to '[back]', learning_path %>
+</div>
+
+<h1>Software Testing</h1>
+
+<div class='index-div'>
+  <ul class='index-list'>
+    <li><%= link_to "Тестовые задания", assignments_path %></li>
+    <li><%= link_to "Stack",   learning_stack_path %></li>
+    <li><%= link_to "Заметки", learning_notes_path %></li>
+    <li><%= link_to "Полезные ресурсы", learning_remarks_path %></li>
+  </ul>
+
+  <ul class='secondary-nav'>
+    <li><%= link_to "Структура собеседования",   learning_structure_path %></li>
+    <li><%= link_to "Dump",   learning_dump_path %></li>
+  </ul>
+</div>
